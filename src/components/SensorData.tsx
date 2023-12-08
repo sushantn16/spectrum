@@ -19,7 +19,7 @@ const SensorData: React.FC = () => {
     const fetchData = async () => {
         try {
             const data = await SpectrumService.getStatus();
-            setSensorData((prevData) => [data, ...prevData].slice(0, 10));
+                        setSensorData((prevData) => [data, ...prevData].slice(0, 10));
             if (data.isActionRequired) {
                 setShowActionPopup(data.isActionRequired);
                 setSelectedSensor(data);
@@ -30,8 +30,8 @@ const SensorData: React.FC = () => {
     };
 
     useEffect(() => {
-        fetchData(); // Fetch data when the component mounts
-    }, []);
+        fetchData();
+    },[])
 
     const handleActionButton = async () => {
         try {
@@ -74,7 +74,7 @@ const SensorData: React.FC = () => {
                         sensorData.length > 0 && (<LineChart sensorData={sensorData} />)
                     )}
                 </Box>
-                
+
 
                 <ActionPopup
                     isOpen={showActionPopup}

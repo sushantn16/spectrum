@@ -8,6 +8,10 @@ interface DataTableProps {
 }
 
 const DataTable: React.FC<DataTableProps> = ({ sensorData }) => {
+
+    const camelCaseToNormal = (text:string) => {
+        return text.replace(/([a-z])([A-Z])/g, '$1 $2').split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+      }
     return (
         <>
             {sensorData && (
@@ -18,7 +22,7 @@ const DataTable: React.FC<DataTableProps> = ({ sensorData }) => {
                                 {sensorData.length > 0 &&
                                     Object.keys(sensorData[0]).map((key) => (
                                         <TableCell key={key} sx={{ fontWeight: 'bold' }}>
-                                            {key}
+                                            {camelCaseToNormal(key)}
                                         </TableCell>
                                     ))}
                             </TableRow>
