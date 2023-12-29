@@ -3,7 +3,7 @@
 This is a React application for displaying sensor data using a table and line chart.
 Typescript is used in development of this application.
 
-This project is deployed on netlify and can be checked out on aerospace-data-dashboard.netlify.app
+This project is deployed on netlify and can be checked out on http://aerospace-data-dashboard.netlify.app
 
 ## Installation
 
